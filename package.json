@@ -1,0 +1,46 @@
+{
+  "name": "paperclip-plugin-tts",
+  "version": "0.1.0",
+  "description": "Paperclip plugin: a play button that reads issues and comments aloud (browser voices, OpenAI-compatible TTS, or ElevenLabs).",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "paperclip",
+    "paperclip-plugin",
+    "tts",
+    "text-to-speech",
+    "elevenlabs",
+    "openai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denour/paperclip-plugin-tts.git"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22.18"
+  },
+  "paperclipPlugin": {
+    "manifest": "./dist/manifest.js",
+    "worker": "./dist/worker.js",
+    "ui": "./dist/ui/"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"test/*.test.ts\"",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "@paperclipai/plugin-sdk": "2026.1001.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.9.0"
+  }
+}
